@@ -157,57 +157,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-	const languageCards = document.querySelectorAll('.language-card');
-	const progressBars = document.querySelectorAll('.progress-fill');
-
-	// Intersection Observer for scroll animations
-	const observerOptions = {
-		threshold: 0.2,
-		rootMargin: '0px 0px -50px 0px'
-	};
-
-	const observer = new IntersectionObserver(function(entries, observer) {
-		entries.forEach(entry => {
-			if (entry.isIntersecting) {
-				entry.target.style.animationPlayState = 'running';
-
-				// Animate progress bars if this is a language card
-				if (entry.target.classList.contains('language-card')) {
-					const progressFill = entry.target.querySelector('.progress-fill');
-					if (progressFill) {
-						setTimeout(() => {
-							progressFill.style.width = progressFill.getAttribute('data-width');
-						}, 300);
-					}
-				}
-
-				observer.unobserve(entry.target);
-			}
-		});
-	}, observerOptions);
-
-	// Observe language cards
-	languageCards.forEach(card => {
-		card.style.animationPlayState = 'paused';
-		observer.observe(card);
-
-		// Enhanced hover effect
-		card.addEventListener('mouseenter', function() {
-			this.style.transform = 'translateY(-10px)';
-		});
-
-		card.addEventListener('mouseleave', function() {
-			this.style.transform = 'translateY(0)';
-		});
-	});
-
-	// Set initial state for progress bars
-	progressBars.forEach(bar => {
-		bar.style.width = '0';
-	});
-});
-
-document.addEventListener('DOMContentLoaded', function() {
 	const factCards = document.querySelectorAll('.fact-card');
 	const numberElements = document.querySelectorAll('.animate-number');
 
