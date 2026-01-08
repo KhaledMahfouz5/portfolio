@@ -809,7 +809,7 @@ footer {
     margin-bottom: 1.5rem;
 }
 
-.fact-number {
+.fact-header {
     font-size: clamp(2.5rem, 8vw, 4rem);
     font-weight: 700;
     background: linear-gradient(135deg, #B1BABF 0%, #044A67 100%);
@@ -820,7 +820,7 @@ footer {
     overflow: hidden;
 }
 
-.fact-number::after {
+.fact-header::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -832,7 +832,7 @@ footer {
     transition: transform 0.5s ease;
 }
 
-.fact-card:hover .fact-number::after {
+.fact-card:hover .fact-header::after {
     transform: translateX(0);
 }
 
@@ -936,7 +936,7 @@ footer {
         font-size: 2rem;
     }
 
-    .fact-number {
+    .fact-header {
         font-size: 2.5rem;
     }
 }
