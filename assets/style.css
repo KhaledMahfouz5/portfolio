@@ -112,11 +112,6 @@ body {
 	text-shadow: 0 0 20px rgba(var(--accent), 0.5);
 }
 
-.highlight {
-	color: #00ff88;
-	text-shadow: 0 0 15px rgba(0,255,136,0.3);
-}
-
 @media (max-width: 768px) {
 	.banner-content {
 		grid-template-columns: 1fr;
@@ -293,8 +288,9 @@ body {
 }
 
 .highlight {
-	color: var(--accent);
+	color: var(--text-main);
 	font-weight: 700;
+	text-shadow: 0 0 3px rgba(0,0,0,0.5);
 }
 
 .section-nav {
