@@ -71,47 +71,6 @@ function createParticles() {
 // Initialize particles on load
 window.addEventListener('load', createParticles);
 
-// Facts section animation
-const factsTitle = document.querySelector('.facts-title');
-const factCards = document.querySelectorAll('.fact-card');
-const factsObserver = new IntersectionObserver((entries) => {
-	entries.forEach(entry => {
-		if (entry.isIntersecting) {
-			// Animate title
-			factsTitle.style.opacity = 1;
-			factsTitle.style.transform = 'translateY(0)';
-
-			// Animate cards
-			factCards.forEach((card, index) => {
-				setTimeout(() => {
-					card.classList.add('active');
-				}, index * 200); // Staggered delay
-			});
-
-			// Animate numbers
-			const numberElements = document.querySelectorAll('.animate-number');
-			numberElements.forEach(element => {
-				const target = parseInt(element.dataset.target);
-				let current = 0;
-
-				const numberInterval = setInterval(() => {
-					current += Math.ceil(target / 50);
-					if (current >= target) {
-						clearInterval(numberInterval);
-						current = target;
-					}
-					element.textContent = current + (element.dataset.target.endsWith('98') ? '%' : '+');
-				}, 30);
-			});
-
-			// Stop observing after animation
-			factsObserver.unobserve(entry.target);
-		}
-	});
-}, { threshold: 0.25 });
-
-factsObserver.observe(document.querySelector('.facts'));
-
 // Enhanced animation for project cards
 document.addEventListener('DOMContentLoaded', function() {
 	const projectCards = document.querySelectorAll('.project-card');
@@ -188,20 +147,12 @@ document.addEventListener('DOMContentLoaded', function() {
 	factCards.forEach(card => {
 		card.style.animationPlayState = 'paused';
 		observer.observe(card);
-
-		// Enhanced hover effect
-		card.addEventListener('mouseenter', function() {
-			this.style.transform = 'translateY(-10px) scale(1.02)';
-		});
-
-		card.addEventListener('mouseleave', function() {
-			this.style.transform = 'translateY(0) scale(1)';
-		});
 	});
 
 	// Number counting animation
 	function animateNumber(element) {
 		const target = parseInt(element.dataset.target);
+		if (Number.isNaN(target)) return;
 		let current = 0;
 		const duration = 2000; // 2 seconds
 		const steps = 60; // 60 frames
@@ -335,4 +286,3 @@ document.querySelectorAll('.nav-link, .mobile-link').forEach(anchor => {
     // Remove any existing click event listeners to prevent duplicates
     anchor.replaceWith(anchor.cloneNode(true));
 });
-
