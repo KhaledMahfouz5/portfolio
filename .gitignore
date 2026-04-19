@@ -1,4 +1,4 @@
 git-commit-template.md
 mainPoints.md
 *.swp 
-.copilot/
+/.copilot/
