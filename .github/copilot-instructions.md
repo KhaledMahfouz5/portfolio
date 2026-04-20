@@ -18,7 +18,7 @@ This repository is a static site (plain HTML/CSS/JS) and does **not** define a p
 - The site is a single-page portfolio: content/sections in `index.html`, design system + responsive layout in `assets/style.css`, and all client behavior in `assets/script.js`.
 - Navigation has tight HTML/JS coupling:
   - Desktop/mobile links (`.nav-link`, `.mobile-link`) use `href="#section-id"` anchors.
-  - JS smooth-scroll logic and section tracking (`.section-nav` button text) depend on valid `<section id="...">` targets and `IntersectionObserver`.
+  - JS smooth-scroll logic depends on valid `<section id="...">` targets.
 - Section animations are class-driven:
   - CSS defines `.animate-card`, `.animate-fact`, `.animate-timeline` and related keyframes/staggered delays.
   - JS observers pause/resume animation states and attach hover/entrance behavior.
