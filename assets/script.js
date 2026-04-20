@@ -244,6 +244,12 @@ function setupCopyEmail() {
 	});
 }
 
+function setupCurrentYear() {
+	const yearElement = document.querySelector('#current-year');
+	if (!yearElement) return;
+	yearElement.textContent = `${new Date().getFullYear()}`;
+}
+
 window.addEventListener('load', createParticles);
 window.addEventListener('resize', () => {
 	window.clearTimeout(particleResizeTimer);
@@ -257,4 +263,5 @@ document.addEventListener('DOMContentLoaded', () => {
 	setupTimelineAnimations();
 	setupMobileMenu();
 	setupCopyEmail();
+	setupCurrentYear();
 });

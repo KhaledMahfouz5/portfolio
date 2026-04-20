@@ -52,6 +52,10 @@ section[id] {
 	z-index: 1000;
 }
 
+.mobile-header-title {
+	display: none;
+}
+
 .banner {
 	min-height: 100vh;
 	min-height: 100svh;
@@ -1582,6 +1586,15 @@ footer {
     .header {
         padding: 1.75rem 5%;
     }
+
+	.mobile-header-title {
+		display: block;
+		color: var(--text-secondary);
+		font-weight: 700;
+		font-size: 1rem;
+		letter-spacing: 0.4px;
+		text-align: center;
+	}
 
     .desktop-nav {
         display: none;
