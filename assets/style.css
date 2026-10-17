@@ -2,9 +2,15 @@
 	--bg-color: #1F2123;
 	--accent: #044A67;
 	--accent-rgb: 4, 74, 103;
+	--accent-soft: rgba(4, 74, 103, 0.35);
+	--accent-strong: #06719c;
 	--text-main: #A8B1B7;
 	--text-secondary: #D3DADE;
+	--text-heading: #E2E8F0;
+	--text-muted: #A0AEC0;
+	--text-on-accent: #E6F1F5;
 	--border-color: #b1babf1a;
+	--card-bg: rgba(255, 255, 255, 0.04);
 	--banner-gradient-start: #001220;
 	--banner-gradient-end: #044A67;
 }
@@ -254,7 +260,7 @@ section[id] {
 }
 
 .point-content p {
-	color: var(--text-main);
+	color: var(--text-muted);
 	line-height: 1.6;
 }
 
@@ -501,26 +507,6 @@ footer {
 	}
 }
 
-@media (max-width: 768px) {
-	.timeline::before {
-		left: 20px;
-	}
-
-	.timeline-item,
-	.timeline-item:nth-child(odd),
-	.timeline-item:nth-child(even) {
-		width: 100%;
-		left: 0;
-		text-align: left;
-		padding-left: 40px;
-	}
-
-	.experience-dot {
-		left: 4px !important;
-		right: auto !important;
-	}
-}
-
 /* Projects Section */
 .projects-section {
 	min-height: 100vh;
@@ -581,7 +567,7 @@ footer {
 
 /* Project Card */
 .project-card {
-    background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    background: linear-gradient(145deg, rgba(255,255,255,0.045), rgba(255,255,255,0.015));
     border: 1px solid var(--border-color);
     border-radius: 16px;
     padding: 30px 25px;
@@ -595,6 +581,8 @@ footer {
     transform: translateY(30px);
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card::before {
@@ -648,18 +636,20 @@ footer {
     justify-content: center;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: 30px;
-    margin-bottom: 25px;
+    margin-top: 22px;
+    margin-bottom: 22px;
 }
 
 .project-tags span {
-    background: rgba(4, 74, 103, 0.2);
-    color: var(--text-secondary);
-    font-size: 0.8rem;
+    background: rgba(4, 74, 103, 0.45);
+    color: var(--text-on-accent);
+    font-size: 0.78rem;
+    font-weight: 600;
     padding: 6px 14px;
     border-radius: 20px;
     transition: all 0.3s ease;
-    border: 1px solid rgba(4, 74, 103, 0.3);
+    border: 1px solid rgba(115, 176, 204, 0.35);
+    letter-spacing: 0.2px;
 }
 
 .project-card:hover .project-tags span {
@@ -674,13 +664,16 @@ footer {
     padding: 12px 22px;
     border-radius: 30px;
     text-decoration: none;
-    color: var(--text-secondary);
-    background: rgba(4, 74, 103, 0.2);
-    border: 1px solid rgba(4, 74, 103, 0.3);
+    color: var(--text-on-accent);
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-strong);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    font-weight: 500;
+    font-weight: 600;
+    margin-top: auto;
+    align-self: center;
+    letter-spacing: 0.2px;
 }
 
 .project-link::before {
@@ -695,9 +688,11 @@ footer {
 }
 
 .project-link:hover {
-    background: rgba(4, 74, 103, 0.4);
-    transform: scale(1.08);
-    box-shadow: 0 0 15px rgba(4, 74, 103, 0.4);
+    background: var(--accent-strong);
+    border-color: var(--accent-strong);
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 0 18px rgba(6, 113, 156, 0.55);
 }
 
 .project-link:hover::before {
@@ -861,7 +856,7 @@ footer {
 .section-heading {
     text-align: center;
     font-size: clamp(2rem, 5vw, 3.5rem);
-    color: #B1BABF;
+    color: var(--text-heading);
     margin-bottom: 4rem;
     position: relative;
 }
@@ -886,7 +881,7 @@ footer {
 
 .fact-card {
     position: relative;
-    background: linear-gradient(160deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.015));
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
     border-radius: 20px;
     padding: 2.5rem;
     overflow: hidden;
@@ -896,6 +891,9 @@ footer {
     opacity: 0;
     transform: translateY(30px);
     isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    min-height: 320px;
 }
 
 .fact-card::before {
@@ -1045,16 +1043,15 @@ footer {
 
 .fact-title {
     font-size: clamp(1.25rem, 2.2vw, 1.55rem);
-    color: #B1BABF;
+    color: var(--text-heading);
     margin-bottom: 0.8rem;
     font-weight: 600;
 }
 
 .fact-description {
     font-size: 1rem;
-    color: #8D8F91;
+    color: var(--text-muted);
     line-height: 1.75;
-    opacity: 0.95;
     margin-top: auto;
 }
 
@@ -1192,7 +1189,7 @@ footer {
 
 .experiences h2 {
     font-size: 2.5rem;
-    color: #B1BABF;
+    color: var(--text-heading);
     text-align: center;
     margin-bottom: 3rem;
     position: relative;
@@ -1211,225 +1208,365 @@ footer {
     border-radius: 2px;
 }
 
-.timeline {
+/* ===== Tree Graph: root + 3 branches ===== */
+.journey-tree {
     position: relative;
-    max-width: 900px;
+    max-width: 1100px;
     margin: 3rem auto 0;
     padding: 0 20px;
     z-index: 2;
 }
 
-.timeline::before {
+/* ----- Root node ----- */
+.tree-root {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+    position: relative;
+}
+
+.tree-root::after {
     content: '';
     position: absolute;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 3px;
-    height: 100%;
-    background: linear-gradient(to bottom,
-								transparent 0%,
-								#044A67 10%,
-								#044A67 90%,
-								transparent 100%);
+    width: 2px;
+    height: 50px;
+    background: linear-gradient(to bottom, var(--accent-strong), var(--accent));
 }
 
-.timeline-item {
-    position: relative;
-    margin-bottom: 4rem;
-    width: calc(50% - 40px);
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease;
-}
-
-.timeline-item:nth-child(odd) {
-    left: 0;
-    text-align: right;
-    padding-right: 60px;
-}
-
-.timeline-item:nth-child(even) {
-    left: calc(50% + 40px);
-    padding-left: 60px;
-}
-
-.experience-card {
-    background: rgba(255, 255, 255, 0.03);
-    padding: 2rem;
-    border-radius: 12px;
-    border: 1px solid rgba(177, 186, 191, 0.1);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+.tree-root-card {
+    background: linear-gradient(135deg, rgba(6, 113, 156, 0.25), rgba(4, 74, 103, 0.55));
+    border: 1px solid var(--accent-strong);
+    border-radius: 14px;
+    padding: 1.25rem 2.5rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 24px rgba(6, 113, 156, 0.18);
     position: relative;
     overflow: hidden;
 }
 
-.experience-card::before {
+.tree-root-card::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    left: -40%;
+    width: 180%;
+    height: 180%;
+    background: radial-gradient(circle, rgba(115, 176, 204, 0.18) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.tree-root-icon {
+    font-size: 1.9rem;
+    margin-bottom: 0.4rem;
+    filter: drop-shadow(0 0 8px rgba(115, 176, 204, 0.45));
+}
+
+.tree-root-card h3 {
+    color: var(--text-heading);
+    font-size: 1.25rem;
+    margin-bottom: 0.35rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    position: relative;
+}
+
+.tree-root-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    position: relative;
+}
+
+/* ----- Branches container ----- */
+.tree-branches {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.75rem;
+    padding-top: 50px;
+    position: relative;
+}
+
+/* Horizontal line spanning the three branch column centres */
+.tree-branches::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(4, 74, 103, 0.1) 0%, transparent 70%);
-    opacity: 0;
-    transition: opacity 0.4s ease;
+    left: calc(100% / 6);
+    right: calc(100% / 6);
+    height: 2px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            var(--accent) 12%,
+            var(--accent) 88%,
+            transparent 100%);
 }
 
-.experience-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(4, 74, 103, 0.3);
-    border-color: rgba(4, 74, 103, 0.3);
+/* ----- Each branch ----- */
+.tree-branch {
+    position: relative;
+    padding-top: 50px;        /* room for the vertical connector from the horizontal line */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
-.experience-card:hover::before {
-    opacity: 1;
+/* Vertical line from horizontal trunk to this branch header */
+.tree-branch::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 50px;
+    background: var(--accent);
 }
 
-.experience-type {
-    color: #044A67;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 0.8rem;
-    font-weight: 600;
-    display: inline-block;
-    padding: 0.3rem 0.8rem;
-    background: rgba(4, 74, 103, 0.15);
-    border-radius: 15px;
+/* Branch header card (category label) */
+.branch-header {
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+    border: 1px solid var(--accent-strong);
+    border-radius: 12px;
+    padding: 1rem 0.75rem;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    position: relative;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
-.experience-card h3 {
-    color: #B1BABF;
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
+.branch-header:hover {
+    transform: translateY(-3px);
+    border-color: rgba(115, 176, 204, 0.6);
+    box-shadow: 0 10px 24px rgba(6, 113, 156, 0.25);
 }
 
-.experience-company {
-    color: #8D8F91;
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
+.branch-icon {
+    font-size: 1.6rem;
+    display: block;
+    margin-bottom: 0.4rem;
+    line-height: 1;
 }
 
-.experience-duration {
-    color: #8EC4DB;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-    font-weight: 500;
-}
-
-.experience-description {
-    color: #8D8F91;
-    line-height: 1.6;
+.branch-header h4 {
+    color: var(--text-heading);
     font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+    font-weight: 700;
+    margin-bottom: 0.55rem;
 }
 
-.experience-dot {
+.branch-count {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--text-on-accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.18rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid var(--accent-strong);
+    letter-spacing: 0.3px;
+}
+
+/* Vertical line from branch header down to the first node */
+.branch-header::after {
+    content: '';
+    position: absolute;
+    bottom: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 28px;
+    background: var(--accent);
+    opacity: 0.55;
+}
+
+/* ----- Branch nodes list ----- */
+.branch-nodes {
+    list-style: none;
+    padding: 0;
+    margin: 1.25rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    counter-reset: node;
+    position: relative;
+}
+
+/* ----- Node (entry) card ----- */
+.tree-node {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(177, 186, 191, 0.12);
+    border-radius: 10px;
+    padding: 1rem 1rem 1rem 3.25rem;
+    position: relative;
+    margin-bottom: 0.75rem;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    counter-increment: node;
+}
+
+.tree-node:last-child {
+    margin-bottom: 0;
+}
+
+.tree-node:hover {
+    transform: translateY(-2px);
+    border-color: rgba(115, 176, 204, 0.45);
+    box-shadow: 0 8px 22px rgba(6, 113, 156, 0.18);
+}
+
+/* Vertical line connecting all node bullets within a branch */
+.branch-nodes::before {
+    content: '';
+    position: absolute;
+    left: 26px;            /* aligns with the bullet centres */
+    top: 26px;
+    bottom: 26px;
+    width: 2px;
+    background: var(--accent);
+    opacity: 0.35;
+    border-radius: 2px;
+}
+
+/* The bullet circle (always on the left of every node) */
+.node-bullet {
+    position: absolute;
+    left: 16px;
+    top: 18px;
     width: 20px;
     height: 20px;
-    background: #044A67;
-    border: 4px solid #1F2123;
+    background: var(--accent);
+    border: 3px solid var(--bg-color);
     border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(4, 74, 103, 0.35);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Show the chronological rank inside the bullet */
+.node-bullet::after {
+    content: counter(node);
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    right: -50px;
-    box-shadow: 0 0 0 4px rgba(4, 74, 103, 0.3);
-    transition: all 0.3s ease;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--text-on-accent);
+    font-size: 0.62rem;
+    font-weight: 800;
+    line-height: 1;
 }
 
-.timeline-item:nth-child(odd) .experience-dot {
-    left: auto;
-    right: -50px;
+.tree-node:hover .node-bullet {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 4px rgba(6, 113, 156, 0.5), 0 0 12px rgba(6, 113, 156, 0.45);
 }
 
-.timeline-item:nth-child(even) .experience-dot {
-    left: -50px;
-    right: auto;
+.node-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    text-align: left;
 }
 
-.experience-card:hover ~ .experience-dot {
-    transform: translateY(-50%) scale(1.2);
-    box-shadow: 0 0 0 6px rgba(4, 74, 103, 0.4), 0 0 15px rgba(4, 74, 103, 0.5);
+.node-body h5 {
+    color: var(--text-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 0.2rem;
 }
 
-/* Connector line from dot to card */
-.experience-connector {
-    position: absolute;
-    top: 50%;
-    width: 30px;
-    height: 2px;
-    background: linear-gradient(90deg, #044A67, rgba(4, 74, 103, 0.3));
-    transition: all 0.3s ease;
+.node-org {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    font-weight: 500;
 }
 
-.timeline-item:nth-child(odd) .experience-connector {
-    right: -30px;
+.node-date {
+    color: var(--accent-strong);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    margin: 0.35rem 0 0.2rem;
+    display: inline-block;
+    background: rgba(6, 113, 156, 0.18);
+    border: 1px solid rgba(6, 113, 156, 0.35);
+    padding: 0.18rem 0.55rem;
+    border-radius: 6px;
+    align-self: flex-start;
 }
 
-.timeline-item:nth-child(even) .experience-connector {
-    left: -30px;
+.node-status {
+    color: #FFD79A;
+    font-weight: 600;
+    letter-spacing: 0.2px;
 }
 
-.experience-card:hover ~ .experience-connector {
-    width: 40px;
-    background: linear-gradient(90deg, #044A67, #06719c);
+.node-desc {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.55;
+    margin-top: 0.4rem;
 }
 
-/* Animations */
-.animate-timeline {
-    animation: fadeInUp 0.8s ease forwards;
+/* ----- Animations ----- */
+.animate-tree {
+    opacity: 0;
+    transform: translateY(28px);
+    animation: treeFadeIn 0.65s ease forwards;
 }
 
-.timeline-item:nth-child(1) { animation-delay: 0.2s; }
-.timeline-item:nth-child(2) { animation-delay: 0.4s; }
-.timeline-item:nth-child(3) { animation-delay: 0.6s; }
+.tree-root.animate-tree     { animation-delay: 0.1s; }
+.tree-branch:nth-child(1).animate-tree { animation-delay: 0.35s; }
+.tree-branch:nth-child(2).animate-tree { animation-delay: 0.5s; }
+.tree-branch:nth-child(3).animate-tree { animation-delay: 0.65s; }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
+@keyframes treeFadeIn {
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .timeline::before {
-        left: 20px;
+/* ----- Responsive: stack branches on tablet/mobile ----- */
+@media (max-width: 900px) {
+    .tree-branches {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding-top: 30px;
     }
-
-    .timeline-item,
-    .timeline-item:nth-child(odd),
-    .timeline-item:nth-child(even) {
-        width: 100%;
-        left: 0;
+    .tree-branches::before {
+        display: none;
+    }
+    .tree-branch {
+        padding-top: 30px;
+    }
+    .tree-branch::before {
+        height: 30px;
+        top: 0;
+    }
+    .branch-header::after {
+        bottom: -22px;
+        height: 22px;
+    }
+    .branch-header {
         text-align: left;
-        padding-left: 60px;
-        padding-right: 0;
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+        padding: 0.85rem 1rem;
     }
-
-    .experience-dot {
-        left: 6px !important;
-        right: auto !important;
+    .branch-icon {
+        margin-bottom: 0;
+        font-size: 1.4rem;
     }
-
-    .experience-connector {
-        left: -30px !important;
-        right: auto !important;
+    .branch-header h4 {
+        margin-bottom: 0;
+        flex: 1;
     }
-
-    .experience-card {
-        padding: 1.5rem;
-    }
-
-    .experience-card h3 {
-        font-size: 1.2rem;
+    .branch-count {
+        align-self: center;
     }
 }
 
@@ -1437,34 +1574,36 @@ footer {
     .experiences h2 {
         font-size: 2rem;
     }
-
-    .timeline-item {
-        padding-left: 40px;
+    .tree-root-card {
+        padding: 1rem 1.25rem;
     }
-
-    .experience-dot {
-        width: 16px;
-        height: 16px;
-        left: 2px !important;
-    }
-
-    .experience-card {
-        padding: 1.2rem;
-    }
-
-    .experience-type {
-        font-size: 0.8rem;
-    }
-
-    .experience-card h3 {
+    .tree-root-card h3 {
         font-size: 1.1rem;
     }
-
-    .experience-company {
-        font-size: 1rem;
+    .tree-node {
+        padding: 0.85rem 0.85rem 0.85rem 3rem;
+    }
+    .branch-nodes::before {
+        left: 22px;
+        top: 22px;
+        bottom: 22px;
+    }
+    .node-bullet {
+        left: 12px;
+        top: 14px;
+        width: 18px;
+        height: 18px;
+    }
+    .node-bullet::after {
+        font-size: 0.58rem;
+    }
+    .node-body h5 {
+        font-size: 0.95rem;
+    }
+    .node-date {
+        font-size: 0.74rem;
     }
 }
-
 /* Mobile Menu Button */
 .burger-menu {
     display: none;

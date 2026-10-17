@@ -163,10 +163,9 @@ function setupFactAnimations() {
 	});
 }
 
-function setupTimelineAnimations() {
-	const timelineItems = document.querySelectorAll('.timeline-item');
-	if (timelineItems.length === 0) return;
-
+function setupTreeAnimations() {
+	const treeNodes = document.querySelectorAll('.tree-root, .tree-branch');
+	if (treeNodes.length === 0) return;
 	const observer = new IntersectionObserver(entries => {
 		entries.forEach(entry => {
 			if (entry.isIntersecting) {
@@ -174,11 +173,10 @@ function setupTimelineAnimations() {
 				observer.unobserve(entry.target);
 			}
 		});
-	}, { threshold: 0.2, rootMargin: '0px 0px -50px 0px' });
-
-	timelineItems.forEach(item => {
-		item.style.animationPlayState = 'paused';
-		observer.observe(item);
+	}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+	treeNodes.forEach(node => {
+		node.style.animationPlayState = 'paused';
+		observer.observe(node);
 	});
 }
 
@@ -260,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	setupSmoothScroll();
 	setupProjectAnimations();
 	setupFactAnimations();
-	setupTimelineAnimations();
+	setupTreeAnimations();
 	setupMobileMenu();
 	setupCopyEmail();
 	setupCurrentYear();
