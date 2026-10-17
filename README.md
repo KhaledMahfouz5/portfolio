@@ -1,24 +1,50 @@
 # Khaled Mahfouz - Portfolio
 
-Build systems that empower people — automate the routine, secure the unseen, and share what you learn openly so others can stand on your shoulders.
+Computer and Automation Engineering student.
 
-## About Me
-Bridging a set of Cool Skills using Cutting-edge technology solutions.
-- Linux Ecosystem : Deep Knowledge About Linux Systems.
-- AI Powered Development : Building intelligent systems for Various Purposes.
-- Cybersecurity Awareness : Aware Of the latest common CVEs and vulnurbilities .
+Build systems that empower people: automate the routine, secure the unseen, and share what you learn openly.
+
+🌐 **Live site:** [khaledmhfz.vercel.app](https://khaledmhfz.vercel.app)
+
+## About
+
+- ⚙️ **Embedded Systems & C/C++**: STM32 & ESP32 firmware, low-level drivers, bare-metal projects
+- 🐧 **Linux Ecosystem**: hands-on with Linux and the GNU toolchain since 2022
+- 🤖 **AI-Powered Development**: TinyML on microcontrollers and applied AI tools
 
 ## Projects
-- [AL-Najeeb Student Management System](https://github.com/KhaledMahfouz5/AL-Najeeb-System)
-- [Gamma Tech Portfolio](https://gammatechsy.github.io/Portfolio)
-- [NMAP Automation Script](https://github.com/KhaledMahfouz5/nmap-automation-script)
-- [Linux Course](https://github.com/KhaledMahfouz5/linux-course)
-- [Together Team Website](https://github.com/KhaledMahfouz5/together-team-website)
-- [Choco Mahfouz Promo](https://www.facebook.com/share/v/1BaLANB9HE/)
+
+| Project | Tags |
+| --- | --- |
+| [STM32 Without CubeIDE](https://github.com/KhaledMahfouz5/stm32-without-cubeide) | STM32, C, Bare-Metal |
+| [ESP32 DOOM](https://github.com/KhaledMahfouz5/esp32-doom) | ESP32, C/C++, Graphics |
+| [Tasks Org JSON Reader](https://github.com/KhaledMahfouz5/tasks-org-json-reader) | JavaScript, Svelte |
+| [AL-Najeeb Student Management](https://github.com/KhaledMahfouz5/AL-Najeeb-System) | Flask, Python |
+| [Nmap Automation Script](https://github.com/KhaledMahfouz5/nmap-automation-script) | Python, Nmap |
+| [Linux Course](https://github.com/KhaledMahfouz5/linux-course) | Linux, Shell |
+
+## Experience
+
+- **Computer and Automation Engineering**, Damascus University (2023 – 2027, ongoing)
+- **Junior Frontend Developer**, GammaTech (2023 – 2024)
+- **TinyML Course**, Hamak AI and Robotic Club (Dec 2025 – Jan 2026)
+- **Fonte Aperta Program**, advanced AI use-cases, pentesting, open source (2025)
+- **Motion Graphics Course**, Spacetoon Media Group (2022)
+
+## Tech Stack & Run Locally
+
+Plain HTML, CSS, and JavaScript, no build step.
+
+```bash
+git clone https://github.com/KhaledMahfouz5/portfolio.git
+cd portfolio
+python3 -m http.server 8000   # or just open index.html
+```
 
 ## Connect
-- LinkedIn: [linkedin.com/in/khaled-mhfz-a82716331](https://linkedin.com/in/khaled-mhfz-a82716331)
-- GitHub: [github.com/KhaledMahfouz5](https://github.com/KhaledMahfouz5)
-- Telegram: [https://t.me/khaledmhfz](https://t.me/khaledmhfz)
-- Email: [khaledmhfz2004@gmail.com](mailto:khaledmhfz2004@gmail.com)
-- Download CV: [khaled_mhfz_cv_2026.pdf](assets/khaled_mhfz_cv_2026.pdf)
+
+[LinkedIn](https://linkedin.com/in/khaled-mhfz-a82716331) · [Telegram](https://t.me/khaledmhfz) · [Email](mailto:khaledmhfz2004@gmail.com) · [📄 Download CV](https://github.com/KhaledMahfouz5/portfolio/raw/main/assets/khaled_mhfz_cv_2026.pdf)
+
+## License
+
+[MIT](LICENSE)
