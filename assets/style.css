@@ -363,6 +363,7 @@ main { max-width: var(--maxw); margin-inline: auto; padding-inline: 1rem; }
 .bootlog-body { padding: .85rem .9rem; }
 .bootlog-line {
 	display: flex;
+	align-items: baseline; /* Flex ignores vertical-align; use baseline alignment */
 	gap: .35rem;
 	position: relative;
 	padding-inline-start: 2.4rem;   /* room for the gutter */
@@ -372,23 +373,29 @@ main { max-width: var(--maxw); margin-inline: auto; padding-inline: 1rem; }
 .bootlog-line::before {
 	content: counter(ff-line);
 	position: absolute;
+	top: 0;
 	inset-inline-start: 0;
 	width: 2rem;
 	text-align: end;
 	color: var(--lineno);
-	font-size: .78rem;
+	font-size: inherit;      /* match the row's baseline */
+	line-height: inherit;
 	user-select: none;
 }
 .bootlog-line .k { color: var(--preproc); }
 .bootlog-line .s { color: var(--fg-muted); }
 .bootlog-line .v { color: var(--fg); }
 .bootlog-cmd { margin-top: .6rem; }
+/* Remove the doubled gap: .prompt-sig already has margin-inline-end for hero */
+.bootlog-line .prompt-sig { margin-inline-end: 0; }
+
+/* Solid Vim block cursor (flex items ignore vertical-align; use transform) */
 .cursor {
 	display: inline-block;
-	width: .55rem;
-	height: 1em;
+	width: .6em;
+	height: 1.2em;
 	background: var(--cursor);
-	vertical-align: text-bottom;
+	transform: translateY(.2em); /* extend slightly below the baseline */
 	animation: blink 1.1s steps(1) infinite;
 }
 @keyframes blink { 50% { opacity: 0; } }
