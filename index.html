@@ -1,382 +1,414 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="icon" href="assets/favicon.ico">
-		<link rel="stylesheet" href="assets/style.css">
-		<title>Khaled Mahfouz</title>
-		<meta name="description" content="Portfolio of Khaled Mahfouz, a Computer and Automation Engineering student specializing in Robotics, TinyML, and Full-stack Web Development. Explore my projects and professional journey.">
-		<meta property="og:type" content="website">
-		<meta property="og:url" content="https://khaledmahfouz5.github.io/portfolio/">
-		<meta property="og:title" content="Khaled Mahfouz | Portfolio">
-		<meta property="og:description" content="Computer & Automation Engineering student | Open Source enthusiast.">
-		<meta property="og:image" content="assets/profile-placeholder.jpg"> <meta property="twitter:card" content="summary_large_image">
-		<meta property="twitter:title" content="Khaled Mahfouz | Portfolio">
-		<meta property="twitter:description" content="Computer Engineering student .">
-	</head>
-	<body>
-		<header class="header">
-			<div class="mobile-header-title">Welcome to My Website</div>
-			<!-- Desktop Navigation -->
-			<nav class="desktop-nav">
-				<a href="#banner" class="nav-link">HOME</a>
-				<a href="#about" class="nav-link">ABOUT</a>
-				<a href="#projects" class="nav-link">PROJECTS</a>
-				<a href="#milestones" class="nav-link">MILESTONES</a>
-				<a href="#experiences" class="nav-link">EXPERIENCE</a>
-				<a href="#contact" class="nav-link">CONTACT ME</a>
+<html lang="ar" dir="rtl" class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Privacy: no referrer, no third-party requests, no cookies, no storage. -->
+	<meta name="referrer" content="no-referrer">
+	<!--
+		Strict CSP. Note: 'frame-ancestors' is IGNORED inside a <meta> tag
+		(it only works as an HTTP header). We still list it for documentation.
+		'base-uri none' stops <base> hijacking; 'form-action none' since we have no forms.
+	-->
+	<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
+
+	<title>خالد محفوظ — هندسة الحاسوب والأتمتة</title>
+	<meta name="description" content="موقع خالد محفوظ: طالب هندسة حاسوب وأتمتة في جامعة دمشق. أنظمة مدمجة، C/C++، Linux، وأدوات ذكاء اصطناعي على المتحكمات الدقيقة.">
+	<meta name="author" content="Khaled Mahfouz">
+
+	<link rel="canonical" href="https://khaledmhfz.vercel.app/">
+	<link rel="alternate" hreflang="ar" href="https://khaledmhfz.vercel.app/">
+	<link rel="alternate" hreflang="en" href="https://khaledmhfz.vercel.app/en/">
+	<link rel="alternate" hreflang="x-default" href="https://khaledmhfz.vercel.app/">
+
+	<!-- Open Graph / Twitter (translated, no external images) -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://khaledmhfz.vercel.app/">
+	<meta property="og:title" content="خالد محفوظ — هندسة الحاسوب والأتمتة">
+	<meta property="og:description" content="طالب هندسة حاسوب وأتمتة. أنظمة مدمجة، C/C++، Linux، وذكاء اصطناعي على المتحكمات الدقيقة.">
+	<meta property="og:locale" content="ar_SY">
+	<meta property="og:locale:alternate" content="en_US">
+	<meta property="og:image" content="https://khaledmhfz.vercel.app/assets/profile-placeholder.jpg">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="خالد محفوظ — هندسة الحاسوب والأتمتة">
+	<meta name="twitter:description" content="طالب هندسة حاسوب وأتمتة. أنظمة مدمجة، C/C++، Linux، وذكاء اصطناعي على المتحكمات الدقيقة.">
+
+	<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+	<link rel="stylesheet" href="assets/style.css">
+
+	<!--
+		Loaded without defer on purpose: a synchronous, ~10-line reader that
+		applies ?theme=light to <html> BEFORE the first paint, so returning
+		visitors never see a dark flash. CSP keeps it same-origin; no inline.
+	-->
+	<script src="assets/theme.js"></script>
+</head>
+<body>
+
+	<a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
+
+	<!-- ===================== HEADER / NAV ===================== -->
+	<header class="site-header" id="banner">
+		<div class="header-inner">
+			<a class="brand" href="#banner" aria-label="خالد محفوظ — الصفحة الرئيسية">
+				<span class="brand-prompt" dir="ltr" aria-hidden="true">~/khaled $</span>
+				<span class="brand-name">khaled</span>
+			</a>
+
+			<button class="nav-toggle" type="button"
+				aria-expanded="false" aria-controls="primary-nav"
+				aria-label="فتح القائمة"
+				data-open-label="فتح القائمة"
+				data-close-label="إغلاق القائمة">
+				<span class="nav-toggle-bar" aria-hidden="true"></span>
+				<span class="nav-toggle-bar" aria-hidden="true"></span>
+				<span class="nav-toggle-bar" aria-hidden="true"></span>
+			</button>
+
+			<nav class="primary-nav" id="primary-nav" aria-label="التنقل الرئيسي">
+				<ul>
+					<li><a href="#about"><span class="nav-hash" aria-hidden="true">#</span>نبذة</a></li>
+					<li><a href="#projects"><span class="nav-hash" aria-hidden="true">#</span>مشاريع</a></li>
+					<li><a href="#milestones"><span class="nav-hash" aria-hidden="true">#</span>محطات</a></li>
+					<li><a href="#experiences"><span class="nav-hash" aria-hidden="true">#</span>خبرة</a></li>
+					<li><a href="#contact"><span class="nav-hash" aria-hidden="true">#</span>تواصل</a></li>
+				</ul>
+				<button class="theme-toggle" type="button"
+					aria-pressed="false"
+					aria-label="الوضع الفاتح"
+					data-light-text="[ light ]"
+					data-dark-text="[ dark ]">[ dark ]</button>
+				<a class="lang-switch" href="en/index.html" hreflang="en" lang="en" dir="ltr" rel="alternate">English</a>
 			</nav>
+		</div>
+	</header>
 
-			<!-- Mobile Menu Button -->
-			<div class="burger-menu">
-				<div class="bar"></div>
-				<div class="bar"></div>
-				<div class="bar"></div>
-			</div>
+	<main id="main">
 
-			<!-- Mobile Sidebar -->
-			<div class="mobile-nav">
-				<a href="#banner" class="mobile-link">HOME</a>
-				<a href="#about" class="mobile-link">ABOUT</a>
-				<a href="#projects" class="mobile-link">PROJECTS</a>
-				<a href="#milestones" class="mobile-link">MILESTONES</a>
-				<a href="#experiences" class="mobile-link">EXPERIENCE</a>
-				<a href="#contact" class="mobile-link">CONTACT ME</a>
-			</div>
-
-			<!-- Overlay for when menu is open -->
-			<div class="mobile-overlay"></div>
-
-		</header>
-
-		<div id="banner" class="section-anchor" aria-hidden="true"></div>
-		<section class="banner">
-			<div class="particles-container"></div>
-			<div class="banner-content">
-				<div class="banner-text">
-					<h3 class="subtitle">Computer And Automation Engineering Student</h3>
-					<h1>Khaled Mahfouz</h1>
-					<p class="slogan">Build systems that empower people &mdash; automate the routine, secure the unseen, and share what you learn openly so others can stand on your shoulders.</p>
+		<!-- ===================== HERO ===================== -->
+		<section class="hero" aria-labelledby="hero-title">
+			<div class="hero-grid">
+				<div class="hero-text">
+					<p class="hero-kicker" dir="ltr">
+						<span class="prompt">~/khaled</span> <span class="prompt-sig">$</span> whoami
+					</p>
+					<h1 id="hero-title">خالد محفوظ</h1>
+					<p class="hero-role">طالب هندسة حاسوب وأتمتة</p>
+					<p class="hero-lead">
+						أجسر بين الأنظمة المدمجة وتطوير البرمجيات بتقنيات ذكاء اصطناعي حديثة.
+					</p>
+					<p class="hero-slogan">
+						«ابنِ أنظمةً تُمكِّن الناس: أتمتة الروتين، وتأمين ما لا يُرى، ومشاركة ما تتعلّمه بانفتاح حتى يقف الآخرون على أكتافك.»
+					</p>
 				</div>
-				<img src="assets/profile-placeholder.jpg" width="350" height="350" alt="Khaled Mahfouz portrait" class="profile-img" fetchpriority="high" decoding="async">
-			</div>
-		</section>
 
-		<div id="about" class="section-anchor" aria-hidden="true"></div>
-		<section class="about">
-			<div class="about-container">
-				<div class="content-wrapper">
-					<h2 class="section-title">
-						<span class="title-decorator"></span>
-						About Me
-					</h2>
-
-					<div class="content-grid">
-						<div class="main-content">
-							<p class="lead-text">
-								Bridging <span class="highlight">Embedded Systems</span> &amp;
-								<span class="highlight">Software Development</span> with modern
-								<span class="highlight">AI</span> Technologies.
-							</p>
-
-							<div class="key-points">
-
-								<div class="point">
-									<div class="icon">⚙️</div>
-									<div class="point-content">
-										<h3>Embedded Systems &amp; C/C++</h3>
-										<p>Firmware on STM32 &amp; ESP32, low-level drivers, and bare-metal projects</p>
-									</div>
-								</div>
-								<div class="point">
-									<div class="icon">🐧</div>
-									<div class="point-content">
-										<h3>Linux Ecosystem</h3>
-										<p>Deep, hands-on knowledge of Linux systems and the GNU toolchain</p>
-									</div>
-								</div>
-								<div class="point">
-									<div class="icon">🤖</div>
-									<div class="point-content">
-										<h3>AI-Powered Development</h3>
-										<p>Building intelligent systems — TinyML on microcontrollers &amp; applied AI tools</p>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="decorative-aside">
-							<div class="line-grid">
-								<div class="vertical-line"></div>
-								<div class="horizontal-line"></div>
-							</div>
+				<!-- Fake fastfetch-style block. Purely decorative, LTR. -->
+				<aside class="bootlog" dir="ltr" aria-label="بطاقة تعريف سريعة">
+					<div class="bootlog-body">
+						<div class="bootlog-line"><span class="k">user</span><span class="s">:</span><span class="v">Khaled Mahfouz</span></div>
+						<div class="bootlog-line"><span class="k">role</span><span class="s">:</span><span class="v">Computer &amp; Automation Eng.</span></div>
+						<div class="bootlog-line"><span class="k">os</span><span class="s">:</span><span class="v">Linux</span></div>
+						<div class="bootlog-line"><span class="k">shell</span><span class="s">:</span><span class="v">GNU / POSIX</span></div>
+						<div class="bootlog-line"><span class="k">langs</span><span class="s">:</span><span class="v">C, C++, Python, Rust</span></div>
+						<div class="bootlog-line"><span class="k">targets</span><span class="s">:</span><span class="v">STM32, ESP32</span></div>
+						<div class="bootlog-line"><span class="k">uptime</span><span class="s">:</span><span class="v">since 2022</span></div>
+						<div class="bootlog-line bootlog-cmd">
+							<span class="prompt">~/khaled</span> <span class="prompt-sig">$</span>
+							<span class="cursor" aria-hidden="true"></span>
 						</div>
 					</div>
-				</div>
+					<div class="bootlog-status" aria-hidden="true">fastfetch</div>
+				</aside>
 			</div>
 		</section>
 
-		<div id="projects" class="section-anchor" aria-hidden="true"></div>
-		<section class="projects-section">
-			<div class="container">
-				<h2 class="section-title">My Projects</h2>
-				<p class="section-subtitle">A collection of my work across development and design</p>
+		<!-- ===================== ABOUT ===================== -->
+		<section id="about" class="section" aria-labelledby="about-title">
+			<h2 id="about-title" class="section-title">
+				<span class="section-prompt" dir="ltr" lang="en">$ cat about.md</span>
+				<span class="section-name">نبذة</span>
+			</h2>
 
-				<div class="projects-grid">
-					<!-- Project 1 -->
-					<div class="project-card animate-card">
-						<h3>STM32 Without CubeIDE</h3>
-						<div class="project-tags">
-							<span>STM32</span><span>C</span><span>Bare-Metal</span><span>Embedded</span>
-						</div>
-						<a href="https://github.com/KhaledMahfouz5/stm32-without-cubeide" target="_blank" rel="noopener noreferrer" class="project-link">
-							View on GitHub
-						</a>
-					</div>
+			<div class="about-grid">
+				<p class="lead">
+					أعمل قريبًا من العتاد: أكتب البرمجيات الثابتة على <span dir="ltr" lang="en">STM32</span> و<span dir="ltr" lang="en">ESP32</span>، وأقرأ الخرائط السجلية في وثائق الشرائح، وأستخدم بيئة <span dir="ltr" lang="en">Linux</span> وأدوات <span dir="ltr" lang="en">GNU</span> يوميًا. أفضّل الأدوات البسيطة التي تُتقن عملًا واحدًا.
+				</p>
 
-					<!-- Project 2 -->
-					<div class="project-card animate-card">
-						<h3>ESP32 DOOM</h3>
-						<div class="project-tags">
-							<span>ESP32</span><span>C/C++</span><span>Graphics</span><span>Embedded</span>
-						</div>
-						<a href="https://github.com/KhaledMahfouz5/esp32-doom" target="_blank" rel="noopener noreferrer" class="project-link">
-							View on GitHub
-						</a>
-					</div>
+				<ul class="key-points">
+					<li class="point">
+						<h3>الأنظمة المدمجة و <span dir="ltr" lang="en">C/C++</span></h3>
+						<p>برمجيات ثابتة على <span dir="ltr" lang="en">STM32</span> و<span dir="ltr" lang="en">ESP32</span>، مشغّلات منخفضة المستوى، ومشاريع <span dir="ltr" lang="en">bare-metal</span>.</p>
+					</li>
+					<li class="point">
+						<h3>منظومة <span dir="ltr" lang="en">Linux</span></h3>
+						<p>معرفة عملية عميقة بأنظمة <span dir="ltr" lang="en">Linux</span> وسلسلة أدوات <span dir="ltr" lang="en">GNU</span>.</p>
+					</li>
+					<li class="point">
+						<h3>تطوير مدعوم بالذكاء الاصطناعي</h3>
+						<p>بناء أنظمة ذكية، و<span dir="ltr" lang="en">TinyML</span> على المتحكمات الدقيقة، وأدوات ذكاء اصطناعي تطبيقية.</p>
+					</li>
+				</ul>
+			</div>
 
-					<!-- Project 3 -->
-					<div class="project-card animate-card">
-						<h3>Tasks Org JSON Reader</h3>
-						<div class="project-tags">
-							<span>JavaScript</span><span>Svelte</span><span>CSS</span><span>HTML</span>
-						</div>
-						<a href="https://github.com/KhaledMahfouz5/tasks-org-json-reader" target="_blank" rel="noopener noreferrer" class="project-link">
-							View on GitHub
-						</a>
-					</div>
-
-					<!-- Project 4 -->
-					<div class="project-card animate-card">
-						<h3>AL-Najeeb Student Management</h3>
-						<div class="project-tags">
-							<span>Flask</span><span>Python</span><span>Web App</span>
-						</div>
-						<a href="https://github.com/KhaledMahfouz5/AL-Najeeb-System" target="_blank" rel="noopener noreferrer" class="project-link">
-							View on GitHub
-						</a>
-					</div>
-
-					<!-- Project 5 -->
-					<div class="project-card animate-card">
-						<h3>Nmap Automation Script</h3>
-						<div class="project-tags">
-							<span>Python</span><span>Nmap</span><span>Network Scanning</span>
-						</div>
-						<a href="https://github.com/KhaledMahfouz5/nmap-automation-script" target="_blank" rel="noopener noreferrer" class="project-link">
-							View on GitHub
-						</a>
-					</div>
-
-					<!-- Project 6 -->
-					<div class="project-card animate-card">
-						<h3>Linux Course</h3>
-						<div class="project-tags">
-							<span>Linux</span><span>Shell</span><span>Open Source</span>
-						</div>
-						<a href="https://github.com/KhaledMahfouz5/linux-course" target="_blank" rel="noopener noreferrer" class="project-link">
-							View on GitHub
-						</a>
-					</div>
-				</div>
+			<div class="chips" aria-label="أدوات أستخدمها">
+				<span class="chip" dir="ltr" lang="en">C</span>
+				<span class="chip" dir="ltr" lang="en">C++</span>
+				<span class="chip" dir="ltr" lang="en">Python</span>
+				<span class="chip" dir="ltr" lang="en">Rust</span>
+				<span class="chip" dir="ltr" lang="en">Linux</span>
+				<span class="chip" dir="ltr" lang="en">GNU toolchain</span>
+				<span class="chip" dir="ltr" lang="en">STM32</span>
+				<span class="chip" dir="ltr" lang="en">ESP32</span>
+				<span class="chip" dir="ltr" lang="en">TinyML</span>
 			</div>
 		</section>
 
-		<div id="milestones" class="section-anchor" aria-hidden="true"></div>
-		<section class="facts">
-			<div class="facts-container">
-				<h2 class="section-heading">
-					<span class="heading-accent">Milestones</span>
-					A Snapshot of My Journey
-				</h2>
+		<!-- ===================== PROJECTS ===================== -->
+		<section id="projects" class="section" aria-labelledby="projects-title">
+			<h2 id="projects-title" class="section-title">
+				<span class="section-prompt" dir="ltr" lang="en">~/projects $ ls -1</span>
+				<span class="section-name">مشاريع</span>
+			</h2>
 
-				<div class="facts-grid">
-					<div class="fact-card animate-fact">
-						<div class="fact-content">
-							<div class="fact-icon">🚀</div>
-							<div class="fact-stats">
-								<div class="fact-header animate-number" data-target="1">1</div>
-								<div class="fact-unit">year</div>
-							</div>
-							<div class="fact-divider"></div>
-							<h3 class="fact-title">Of Frontend Development</h3>
-							<p class="fact-description">Writing cool eye catchy web user interfaces for various purposes</p>
-						</div>
-						<div class="fact-glow"></div>
+			<div class="project-grid">
+				<article class="project">
+					<div class="project-file" dir="ltr" lang="en">stm32-without-cubeide</div>
+					<div class="project-body">
+						<h3 dir="ltr" lang="en">STM32 Without CubeIDE</h3>
+						<p class="project-desc">مشروع على <span dir="ltr" lang="en">STM32</span> بدون <span dir="ltr" lang="en">CubeIDE</span>، بل بالوصول المباشر إلى السجلات.</p>
+						<ul class="tags" dir="ltr" lang="en">
+							<li>STM32</li><li>C</li><li>Bare-Metal</li><li>Embedded</li>
+						</ul>
+						<a class="project-link" href="https://github.com/KhaledMahfouz5/stm32-without-cubeide" target="_blank" rel="noopener noreferrer">
+							<span dir="ltr" lang="en">github →</span>
+						</a>
 					</div>
+				</article>
 
-					<div class="fact-card animate-fact">
-						<div class="fact-content">
-							<div class="fact-icon">🌐️</div>
-							<div class="fact-stats">
-								<div class="fact-header">LinkedIn</div>
-								<div class="fact-unit">profile</div>
-							</div>
-							<div class="fact-divider"></div>
-							<h3 class="fact-title">Let&apos;s Connect</h3>
-							<p class="fact-description">Follow updates and open-source insights on
-								<a href="https://linkedin.com/in/khaled-mhfz-a82716331" target="_blank" rel="noopener noreferrer" class="fact-inline-link">LinkedIn</a>.
-							</p>
-						</div>
-						<div class="fact-glow"></div>
+				<article class="project">
+					<div class="project-file" dir="ltr" lang="en">esp32-doom</div>
+					<div class="project-body">
+						<h3 dir="ltr" lang="en">ESP32 DOOM</h3>
+						<p class="project-desc">تشغيل لعبة <span dir="ltr" lang="en">DOOM</span> على متحكم <span dir="ltr" lang="en">ESP32</span>.</p>
+						<ul class="tags" dir="ltr" lang="en">
+							<li>ESP32</li><li>C/C++</li><li>Graphics</li><li>Embedded</li>
+						</ul>
+						<a class="project-link" href="https://github.com/KhaledMahfouz5/esp32-doom" target="_blank" rel="noopener noreferrer">
+							<span dir="ltr" lang="en">github →</span>
+						</a>
 					</div>
+				</article>
 
-					<div class="fact-card animate-fact">
-						<div class="fact-content">
-							<div class="fact-icon">👨‍💻</div>
-							<div class="fact-stats">
-								<div class="fact-header animate-number" data-target="35" data-suffix="+">35+</div>
-								<div class="fact-unit">public repos</div>
-							</div>
-							<div class="fact-divider"></div>
-							<h3 class="fact-title">On Github</h3>
-							<p class="fact-description">Sharing programming experience, tools, and learning projects openly on <a href="https://github.com/KhaledMahfouz5" target="_blank" rel="noopener noreferrer" class="fact-inline-link">GitHub</a>.</p>
-						</div>
-						<div class="fact-glow"></div>
+				<article class="project">
+					<div class="project-file" dir="ltr" lang="en">tasks-org-json-reader</div>
+					<div class="project-body">
+						<h3 dir="ltr" lang="en">Tasks Org JSON Reader</h3>
+						<p class="project-desc">قارئ <span dir="ltr" lang="en">JSON</span> لمهام <span dir="ltr" lang="en">org-mode</span>.</p>
+						<ul class="tags" dir="ltr" lang="en">
+							<li>JavaScript</li><li>Svelte</li><li>CSS</li><li>HTML</li>
+						</ul>
+						<a class="project-link" href="https://github.com/KhaledMahfouz5/tasks-org-json-reader" target="_blank" rel="noopener noreferrer">
+							<span dir="ltr" lang="en">github →</span>
+						</a>
 					</div>
+				</article>
 
-					<div class="fact-card animate-fact">
-						<div class="fact-content">
-							<div class="fact-icon">🐧</div>
-							<div class="fact-stats">
-								<div class="fact-header">2022</div>
-								<div class="fact-unit">since</div>
-							</div>
-							<div class="fact-divider"></div>
-							<h3 class="fact-title">Exploring Linux</h3>
-							<p class="fact-description">Hands-on learning and daily usage of Linux systems since 2022.</p>
-						</div>
-						<div class="fact-glow"></div>
+				<article class="project">
+					<div class="project-file" dir="ltr" lang="en">AL-Najeeb-System</div>
+					<div class="project-body">
+						<h3 dir="ltr" lang="en">AL-Najeeb Student Management</h3>
+						<p class="project-desc">تطبيق ويب لإدارة الطلاب.</p>
+						<ul class="tags" dir="ltr" lang="en">
+							<li>Flask</li><li>Python</li><li>Web App</li>
+						</ul>
+						<a class="project-link" href="https://github.com/KhaledMahfouz5/AL-Najeeb-System" target="_blank" rel="noopener noreferrer">
+							<span dir="ltr" lang="en">github →</span>
+						</a>
 					</div>
-				</div>
+				</article>
+
+				<article class="project">
+					<div class="project-file" dir="ltr" lang="en">nmap-automation-script</div>
+					<div class="project-body">
+						<h3 dir="ltr" lang="en">Nmap Automation Script</h3>
+						<p class="project-desc">أتمتة فحص الشبكات بأداة <span dir="ltr" lang="en">Nmap</span>.</p>
+						<ul class="tags" dir="ltr" lang="en">
+							<li>Python</li><li>Nmap</li><li>Network Scanning</li>
+						</ul>
+						<a class="project-link" href="https://github.com/KhaledMahfouz5/nmap-automation-script" target="_blank" rel="noopener noreferrer">
+							<span dir="ltr" lang="en">github →</span>
+						</a>
+					</div>
+				</article>
+
+				<article class="project">
+					<div class="project-file" dir="ltr" lang="en">linux-course</div>
+					<div class="project-body">
+						<h3 dir="ltr" lang="en">Linux Course</h3>
+						<p class="project-desc">محتوى تعليمي مفتوح المصدر عن <span dir="ltr" lang="en">Linux</span>.</p>
+						<ul class="tags" dir="ltr" lang="en">
+							<li>Linux</li><li>Shell</li><li>Open Source</li>
+						</ul>
+						<a class="project-link" href="https://github.com/KhaledMahfouz5/linux-course" target="_blank" rel="noopener noreferrer">
+							<span dir="ltr" lang="en">github →</span>
+						</a>
+					</div>
+				</article>
 			</div>
 		</section>
 
-		<div id="experiences" class="section-anchor" aria-hidden="true"></div>
-		<section class="experiences">
-			<h2>Professional Journey</h2>
-			<div class="journey-tree">
-				<!-- Root node -->
-				<div class="tree-root animate-tree">
-					<div class="tree-root-card">
-						<div class="tree-root-icon" aria-hidden="true">🌱</div>
-						<h3>My Tech Path</h3>
-						<p>Learning, building &amp; shipping — one commit at a time</p>
-					</div>
-				</div>
+		<!-- ===================== MILESTONES (register map) ===================== -->
+		<section id="milestones" class="section" aria-labelledby="milestones-title">
+			<h2 id="milestones-title" class="section-title">
+				<span class="section-prompt" dir="ltr" lang="en">// milestones</span>
+				<span class="section-name">محطات</span>
+			</h2>
 
-				<!-- Branch labels + node lists, grouped by category -->
-				<div class="tree-branches">
-					<!-- Branch 1 -->
-					<div class="tree-branch animate-tree" data-category="education">
-						<div class="branch-header">
-							<span class="branch-icon" aria-hidden="true">🎓</span>
-							<h4>Education</h4>
-							<span class="branch-count" aria-label="1 item">1</span>
-						</div>
-						<ol class="branch-nodes">
-							<li class="tree-node">
-								<div class="node-bullet" aria-hidden="true"></div>
-								<div class="node-body">
-									<h5>Computer And Automation Engineering</h5>
-									<div class="node-org">Damascus University</div>
-									<div class="node-date">2023 &ndash; 2027 <span class="node-status">(ongoing)</span></div>
-									<p class="node-desc">Specialized in Computer Systems and Computer Hardware.</p>
-								</div>
-							</li>
-						</ol>
-					</div>
-
-					<!-- Branch 2 -->
-					<div class="tree-branch animate-tree" data-category="work">
-						<div class="branch-header">
-							<span class="branch-icon" aria-hidden="true">💼</span>
-							<h4>Work Experience</h4>
-							<span class="branch-count" aria-label="1 item">1</span>
-						</div>
-						<ol class="branch-nodes">
-							<li class="tree-node">
-								<div class="node-bullet" aria-hidden="true"></div>
-								<div class="node-body">
-									<h5>Junior Frontend Developer</h5>
-									<div class="node-org">GammaTech</div>
-									<div class="node-date">2023 &ndash; 2024</div>
-								</div>
-							</li>
-						</ol>
-					</div>
-
-					<!-- Branch 3 -->
-					<div class="tree-branch animate-tree" data-category="certifications">
-						<div class="branch-header">
-							<span class="branch-icon" aria-hidden="true">📜</span>
-							<h4>Certifications</h4>
-							<span class="branch-count" aria-label="3 items">3</span>
-						</div>
-						<ol class="branch-nodes">
-							<li class="tree-node">
-								<div class="node-bullet" aria-hidden="true"></div>
-								<div class="node-body">
-									<h5>TinyML Course</h5>
-									<div class="node-org">Hamak AI and Robotic Club</div>
-									<div class="node-date">DEC 2025 &ndash; JAN 2026</div>
-									<p class="node-desc">Making AI usable on microcontrollers via Edge Impulse.</p>
-								</div>
-							</li>
-							<li class="tree-node">
-								<div class="node-bullet" aria-hidden="true"></div>
-								<div class="node-body">
-									<h5>Fonte Aperta Program</h5>
-									<div class="node-org">Fonte Aperta</div>
-									<div class="node-date">2025</div>
-									<p class="node-desc">Advanced AI use-cases, pentesting techniques and open-source solutions.</p>
-								</div>
-							</li>
-							<li class="tree-node">
-								<div class="node-bullet" aria-hidden="true"></div>
-								<div class="node-body">
-									<h5>Motion Graphics Course</h5>
-									<div class="node-org">Spacetoon Media Group</div>
-									<div class="node-date">2022</div>
-									<p class="node-desc">Advanced motion graphics with After Effects.</p>
-								</div>
-							</li>
-						</ol>
-					</div>
-				</div>
+			<div class="regmap-wrap">
+				<table class="regmap">
+					<caption class="visually-hidden">محطات سريعة</caption>
+					<colgroup>
+						<col class="col-addr">
+						<col class="col-name">
+						<col class="col-value">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">addr</th>
+							<th scope="col">name</th>
+							<th scope="col">value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="addr" aria-hidden="true">0x00</td>
+							<td class="name">frontend_exp</td>
+							<td class="value">
+								<span class="counter" data-count-to="1" data-suffix="">1</span> سنة تطوير واجهات
+							</td>
+						</tr>
+						<tr>
+							<td class="addr" aria-hidden="true">0x04</td>
+							<td class="name">public_repos</td>
+							<td class="value">
+								<span class="counter" data-count-to="35" data-suffix="+">35+</span>
+								<a class="inline-link" href="https://github.com/KhaledMahfouz5" target="_blank" rel="noopener noreferrer"><span dir="ltr" lang="en">GitHub</span></a>
+							</td>
+						</tr>
+						<tr>
+							<td class="addr" aria-hidden="true">0x08</td>
+							<td class="name">linux_since</td>
+							<td class="value"><span dir="ltr" lang="en">2022</span> — استخدام يومي لـ <span dir="ltr" lang="en">Linux</span></td>
+						</tr>
+						<tr>
+							<td class="addr" aria-hidden="true">0x0C</td>
+							<td class="name">linkedin</td>
+							<td class="value">
+								<a class="inline-link" href="https://linkedin.com/in/khaled-mhfz-a82716331" target="_blank" rel="noopener noreferrer"><span dir="ltr" lang="en">/in/khaled-mhfz</span></a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</section>
 
-		<footer>
-			<div id="contact" class="section-anchor" aria-hidden="true"></div>
-			<section class="contact-section">
-				<div class="footer-name">Contact Me Via</div>
-				<div class="social-links">
-					<a href="https://linkedin.com/in/khaled-mhfz-a82716331" class="social-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-					<a href="https://github.com/KhaledMahfouz5" class="social-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-					<a href="https://t.me/khaledmhfz" class="social-link" target="_blank" rel="noopener noreferrer">Telegram</a>
-					<a href="assets/khaled_mhfz_cv_2026.pdf" class="social-link" target="_blank" rel="noopener noreferrer">Download CV</a>
-				</div>
-				<div class="email-actions">
-					<a href="mailto:khaledmhfz2004@gmail.com" class="footer-email">khaledmhfz2004@gmail.com</a>
-					<button type="button" class="copy-email-btn" data-email="khaledmhfz2004@gmail.com">Copy email</button>
-				</div>
-				<div class="copy-status" aria-live="polite"></div>
-				<div class="copyright">All Rights Reserved <span id="current-year">2026</span></div>
-			</section>
-		</footer>
+		<!-- ===================== EXPERIENCE (git log) ===================== -->
+		<section id="experiences" class="section" aria-labelledby="exp-title">
+			<h2 id="exp-title" class="section-title">
+				<span class="section-prompt" dir="ltr" lang="en">/* experience */</span>
+				<span class="section-name">خبرة</span>
+			</h2>
 
-		<script src="assets/script.js"></script>
-	</body>
+			<ol class="gitlog">
+				<li class="commit">
+					<span class="hash" aria-hidden="true" dir="ltr">a1f3c02</span>
+					<div class="commit-body">
+						<h3>هندسة الحاسوب والأتمتة — جامعة دمشق</h3>
+						<p class="commit-meta"><span dir="ltr" lang="en">2023 – 2027</span> · مستمر · تخصص أنظمة الحاسوب وعتاده</p>
+					</div>
+				</li>
+				<li class="commit">
+					<span class="hash" aria-hidden="true" dir="ltr">7b2e9d1</span>
+					<div class="commit-body">
+						<h3>مطوّر واجهات أمامية مبتدئ — <span dir="ltr" lang="en">GammaTech</span></h3>
+						<p class="commit-meta"><span dir="ltr" lang="en">2023 – 2024</span></p>
+					</div>
+				</li>
+				<li class="commit">
+					<span class="hash" aria-hidden="true" dir="ltr">c0d54aa</span>
+					<div class="commit-body">
+						<h3>دورة <span dir="ltr" lang="en">TinyML</span> — نادي <span dir="ltr" lang="en">Hamak AI and Robotic Club</span></h3>
+						<p class="commit-meta"><span dir="ltr" lang="en">Dec 2025 – Jan 2026</span> · تشغيل الذكاء الاصطناعي على المتحكمات عبر <span dir="ltr" lang="en">Edge Impulse</span></p>
+					</div>
+				</li>
+				<li class="commit">
+					<span class="hash" aria-hidden="true" dir="ltr">e8a11b6</span>
+					<div class="commit-body">
+						<h3>برنامج <span dir="ltr" lang="en">Fonte Aperta</span></h3>
+						<p class="commit-meta"><span dir="ltr" lang="en">2025</span> · استخدامات ذكاء اصطناعي متقدمة، تقنيات اختبار اختراق، وحلول مفتوحة المصدر</p>
+					</div>
+				</li>
+				<li class="commit">
+					<span class="hash" aria-hidden="true" dir="ltr">3f9b0c7</span>
+					<div class="commit-body">
+						<h3>دورة موشن جرافيكس — <span dir="ltr" lang="en">Spacetoon Media Group</span></h3>
+						<p class="commit-meta"><span dir="ltr" lang="en">2022</span> · موشن جرافيكس متقدم بـ <span dir="ltr" lang="en">After Effects</span></p>
+					</div>
+				</li>
+			</ol>
+		</section>
+
+		<!-- ===================== CONTACT ===================== -->
+		<section id="contact" class="section" aria-labelledby="contact-title">
+			<h2 id="contact-title" class="section-title">
+				<span class="section-prompt" dir="ltr" lang="en">$ contact --list</span>
+				<span class="section-name">تواصل</span>
+			</h2>
+
+			<ul class="contact-list">
+				<li>
+					<span class="contact-label" dir="ltr" lang="en">linkedin</span>
+					<a href="https://linkedin.com/in/khaled-mhfz-a82716331" target="_blank" rel="noopener noreferrer"><span dir="ltr" lang="en">/in/khaled-mhfz</span></a>
+				</li>
+				<li>
+					<span class="contact-label" dir="ltr" lang="en">github</span>
+					<a href="https://github.com/KhaledMahfouz5" target="_blank" rel="noopener noreferrer"><span dir="ltr" lang="en">@KhaledMahfouz5</span></a>
+				</li>
+				<li>
+					<span class="contact-label" dir="ltr" lang="en">telegram</span>
+					<a href="https://t.me/khaledmhfz" target="_blank" rel="noopener noreferrer"><span dir="ltr" lang="en">@khaledmhfz</span></a>
+				</li>
+				<li>
+					<span class="contact-label" dir="ltr" lang="en">cv</span>
+					<a href="assets/khaled_mhfz_cv_2026.pdf"><span>تحميل السيرة (PDF)</span></a>
+				</li>
+				<li class="contact-email">
+					<span class="contact-label" dir="ltr" lang="en">email</span>
+					<a href="mailto:khaledmhfz2004@gmail.com"><span dir="ltr" lang="en">khaledmhfz2004@gmail.com</span></a>
+					<button class="copy-btn" type="button"
+						data-copy="khaledmhfz2004@gmail.com"
+						data-copied-label="تم نسخ البريد."
+						data-error-label="تعذّر النسخ."
+						aria-label="نسخ البريد الإلكتروني">نسخ</button>
+				</li>
+			</ul>
+			<p class="copy-status" role="status" aria-live="polite"></p>
+			<p class="eob" aria-hidden="true"></p>
+		</section>
+
+	</main>
+
+	<!-- ===================== FOOTER ===================== -->
+	<footer class="site-footer">
+		<p class="privacy">
+			<strong>الخصوصية:</strong> لا ملفات تعريف ارتباط، لا أدوات تتبّع، لا تحليلات، ولا أي طلبات لجهات خارجية. الموقع مفتوح المصدر برخصة <span dir="ltr" lang="en">MIT</span>.
+		</p>
+		<p class="copyright">
+			<span dir="ltr" lang="en">© 2026 Khaled Mahfouz</span> · <a href="#banner" class="back-top">أعلى الصفحة ↑</a>
+		</p>
+	</footer>
+
+	<script src="assets/script.js" defer></script>
+</body>
 </html>
