@@ -6,24 +6,34 @@ Build systems that empower people: automate the routine, secure the unseen, and 
 
 🌐 **Live site:** [khaledmhfz.vercel.app](https://khaledmhfz.vercel.app)
 
-## About
+---
+
+## Arabic Summary / ملخص باللغة العربية
+
+طالب هندسة الحاسوب والأتمتة في جامعة دمشق ومطور أنظمة مدمجة و Linux.
+
+🌐 **الموقع الرسمي:** [khaledmhfz.vercel.app](https://khaledmhfz.vercel.app)
+
+---
+
+## About / نبذة
 
 - ⚙️ **Embedded Systems & C/C++**: STM32 & ESP32 firmware, low-level drivers, bare-metal projects
 - 🐧 **Linux Ecosystem**: hands-on with Linux and the GNU toolchain since 2022
 - 🤖 **AI-Powered Development**: TinyML on microcontrollers and applied AI tools
 
-## Projects
+## Projects / المشاريع
 
 | Project | Tags |
 | --- | --- |
-| [STM32 Without CubeIDE](https://github.com/KhaledMahfouz5/stm32-without-cubeide) | STM32, C, Bare-Metal |
-| [ESP32 DOOM](https://github.com/KhaledMahfouz5/esp32-doom) | ESP32, C/C++, Graphics |
-| [Tasks Org JSON Reader](https://github.com/KhaledMahfouz5/tasks-org-json-reader) | JavaScript, Svelte |
-| [AL-Najeeb Student Management](https://github.com/KhaledMahfouz5/AL-Najeeb-System) | Flask, Python |
-| [Nmap Automation Script](https://github.com/KhaledMahfouz5/nmap-automation-script) | Python, Nmap |
-| [Linux Course](https://github.com/KhaledMahfouz5/linux-course) | Linux, Shell |
+| [STM32 Without CubeIDE](https://github.com/KhaledMahfouz5/stm32-without-cubeide) | STM32, C, Bare-Metal, CMake, OpenOCD |
+| [ESP32 DOOM](https://github.com/KhaledMahfouz5/doom-esp-with-arduino) | ESP32, C/C++, Arduino, ESP-IDF, Graphics |
+| [Tasks Org JSON Reader](https://github.com/KhaledMahfouz5/tasks-org-json-reader) | JavaScript, Svelte, CSS, HTML, JSON |
+| [AL-Najeeb Student Management](https://github.com/KhaledMahfouz5/AL-Najeeb-System) | Flask, Python, Web App |
+| [Nmap Automation Script](https://github.com/KhaledMahfouz5/nmap-automation-script) | Python, Nmap, Bash |
+| [Linux Course](https://github.com/KhaledMahfouz5/linux-course) | Linux, Shell, Open Source |
 
-## Experience
+## Experience / الخبرة
 
 - **Computer and Automation Engineering**, Damascus University (2023 – 2027, ongoing)
 - **Junior Frontend Developer**, GammaTech (2023 – 2024)
@@ -31,20 +41,21 @@ Build systems that empower people: automate the routine, secure the unseen, and 
 - **Fonte Aperta Program**, advanced AI use-cases, pentesting, open source (2025)
 - **Motion Graphics Course**, Spacetoon Media Group (2022)
 
-## Tech Stack & Run Locally
+## Architecture, Privacy & Tech Stack
 
-Plain HTML, CSS, and JavaScript, no build step.
+- Plain HTML5, CSS3, vanilla JS (no build step, no framework, no npm).
+- Vim-inspired theme: `desert` (dark default) and `shine` (light opt-in).
+- Theme state is passed via `?theme=light` across language switches without persistent storage.
+- Strict CSP and zero third-party requests or cookies.
+- Configured for Vercel (`vercel.json`).
+
+## Run Locally
 
 ```bash
-git clone https://github.com/KhaledMahfouz5/portfolio.git
+git clone [https://github.com/KhaledMahfouz5/portfolio.git](https://github.com/KhaledMahfouz5/portfolio.git)
 cd portfolio
-python3 -m http.server 8000   # or just open index.html
+python3 -m http.server 8000   # or open index.html directly
 ```
 
-## Connect
-
-[LinkedIn](https://linkedin.com/in/khaled-mhfz-a82716331) · [Telegram](https://t.me/khaledmhfz) · [Email](mailto:khaledmhfz2004@gmail.com) · [📄 Download CV](https://github.com/KhaledMahfouz5/portfolio/raw/main/assets/khaled_mhfz_cv_2026.pdf)
-
 ## License
-
-[MIT](LICENSE)
+MIT

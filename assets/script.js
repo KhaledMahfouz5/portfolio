@@ -10,17 +10,10 @@
 
 	var root = document.documentElement;
 
-	// Mark that JS is running so CSS can opt-in to reveal animations
-	// and hide JS-only controls (theme toggle) when it isn't.
 	root.classList.add("js");
 	root.classList.remove("no-js");
 
 	/* ---------- Theme toggle (no persistence) ---------- */
-	// theme.js already set data-theme on load from ?theme=light.
-	// Here we only toggle the attribute at runtime, update the visible
-	// label text, and keep the language-switch URL in sync. Nothing is
-	// stored anywhere. The aria-label is fixed per page; aria-pressed
-	// carries the state so screen readers announce it exactly once.
 	var themeToggle = document.querySelector(".theme-toggle");
 	var langSwitch = document.querySelector(".lang-switch");
 
@@ -42,13 +35,8 @@
 
 		if (themeToggle) {
 			themeToggle.setAttribute("aria-pressed", String(isLight));
-			var text = isLight
-				? themeToggle.dataset.lightText
-				: themeToggle.dataset.darkText;
-			if (text) themeToggle.textContent = text;
 		}
 
-		// Carry the theme across the language switch via ?theme=light only.
 		if (langSwitch) {
 			var href = langSwitch.getAttribute("href") || "";
 			var base = href.split("?")[0];
@@ -94,6 +82,11 @@
 			if (toggle.getAttribute("aria-expanded") !== "true") return;
 			if (nav.contains(e.target) || toggle.contains(e.target)) return;
 			setNavOpen(false);
+		});
+		window.addEventListener("resize", function () {
+			if (window.innerWidth > 832) {
+				setNavOpen(false);
+			}
 		});
 	}
 

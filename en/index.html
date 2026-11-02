@@ -3,14 +3,10 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#333333">
 
 	<!-- Privacy: no referrer, no third-party requests, no cookies, no storage. -->
 	<meta name="referrer" content="no-referrer">
-	<!--
-		Strict CSP. Note: 'frame-ancestors' is IGNORED inside a <meta> tag
-		(it only works as an HTTP header). We still list it for documentation.
-		'base-uri none' stops <base> hijacking; 'form-action none' since we have no forms.
-	-->
 	<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
 
 	<title>Khaled Mahfouz — Computer &amp; Automation Engineering</title>
@@ -22,33 +18,40 @@
 	<link rel="alternate" hreflang="en" href="https://khaledmhfz.vercel.app/en/">
 	<link rel="alternate" hreflang="x-default" href="https://khaledmhfz.vercel.app/">
 
-	<!-- Open Graph / Twitter (translated, no external images) -->
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://khaledmhfz.vercel.app/en/">
 	<meta property="og:title" content="Khaled Mahfouz — Computer &amp; Automation Engineering">
 	<meta property="og:description" content="Computer and Automation Engineering student. Embedded systems, C/C++, Linux, applied AI on microcontrollers.">
 	<meta property="og:locale" content="en_US">
 	<meta property="og:locale:alternate" content="ar_SY">
-	<meta property="og:image" content="https://khaledmhfz.vercel.app/assets/profile-placeholder.jpg">
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:title" content="Khaled Mahfouz — Computer &amp; Automation Engineering">
 	<meta name="twitter:description" content="Computer and Automation Engineering student. Embedded systems, C/C++, Linux, applied AI on microcontrollers.">
 
 	<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 	<link rel="stylesheet" href="../assets/style.css">
-
-	<!--
-		Loaded without defer on purpose: a synchronous, ~10-line reader that
-		applies ?theme=light to <html> BEFORE the first paint, so returning
-		visitors never see a dark flash. CSP keeps it same-origin; no inline.
-	-->
 	<script src="../assets/theme.js"></script>
+
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"name": "Khaled Mahfouz",
+		"url": "https://khaledmhfz.vercel.app/en/",
+		"jobTitle": "Computer and Automation Engineering Student",
+		"alumniOf": "Damascus University",
+		"sameAs": [
+			"https://github.com/KhaledMahfouz5",
+			"https://linkedin.com/in/khaled-mhfz-a82716331",
+			"https://t.me/khaledmhfz"
+		]
+	}
+	</script>
 </head>
 <body>
 
 	<a class="skip-link" href="#main">Skip to content</a>
 
-	<!-- ===================== HEADER / NAV ===================== -->
 	<header class="site-header" id="banner">
 		<div class="header-inner">
 			<a class="brand" href="#banner" aria-label="Khaled Mahfouz — home">
@@ -75,10 +78,7 @@
 					<li><a href="#contact"><span class="nav-hash" aria-hidden="true">#</span>contact</a></li>
 				</ul>
 				<button class="theme-toggle" type="button"
-					aria-pressed="false"
-					aria-label="Light theme"
-					data-light-text="[ light ]"
-					data-dark-text="[ dark ]">[ dark ]</button>
+					aria-pressed="false">[ light mode ]</button>
 				<a class="lang-switch" href="../index.html" hreflang="ar" lang="ar" dir="rtl" rel="alternate">العربية</a>
 			</nav>
 		</div>
@@ -86,11 +86,10 @@
 
 	<main id="main">
 
-		<!-- ===================== HERO ===================== -->
 		<section class="hero" aria-labelledby="hero-title">
 			<div class="hero-grid">
 				<div class="hero-text">
-					<p class="hero-kicker">
+					<p class="hero-kicker" aria-hidden="true">
 						<span class="prompt">~/khaled</span> <span class="prompt-sig">$</span> whoami
 					</p>
 					<h1 id="hero-title">Khaled Mahfouz</h1>
@@ -103,7 +102,6 @@
 					</p>
 				</div>
 
-				<!-- Fake fastfetch-style block. Decorative. -->
 				<aside class="bootlog" aria-label="Quick identity card">
 					<div class="bootlog-body">
 						<div class="bootlog-line"><span class="k">user</span><span class="s">:</span><span class="v">Khaled Mahfouz</span></div>
@@ -114,7 +112,7 @@
 						<div class="bootlog-line"><span class="k">targets</span><span class="s">:</span><span class="v">STM32, ESP32</span></div>
 						<div class="bootlog-line"><span class="k">uptime</span><span class="s">:</span><span class="v">since 2022</span></div>
 						<div class="bootlog-line bootlog-cmd">
-							<span class="prompt">~/khaled</span> <span class="prompt-sig">$</span>
+							<span class="prompt" aria-hidden="true">~/khaled</span> <span class="prompt-sig" aria-hidden="true">$</span>
 							<span class="cursor" aria-hidden="true"></span>
 						</div>
 					</div>
@@ -123,10 +121,9 @@
 			</div>
 		</section>
 
-		<!-- ===================== ABOUT ===================== -->
 		<section id="about" class="section" aria-labelledby="about-title">
 			<h2 id="about-title" class="section-title">
-				<span class="section-prompt">$ cat about.md</span>
+				<span class="section-prompt" aria-hidden="true">$ cat about.md</span>
 				<span class="section-name">about</span>
 			</h2>
 
@@ -164,10 +161,9 @@
 			</div>
 		</section>
 
-		<!-- ===================== PROJECTS ===================== -->
 		<section id="projects" class="section" aria-labelledby="projects-title">
 			<h2 id="projects-title" class="section-title">
-				<span class="section-prompt">~/projects $ ls -1</span>
+				<span class="section-prompt" aria-hidden="true">~/projects $ ls -1</span>
 				<span class="section-name">projects</span>
 			</h2>
 
@@ -176,23 +172,25 @@
 					<div class="project-file">stm32-without-cubeide</div>
 					<div class="project-body">
 						<h3>STM32 Without CubeIDE</h3>
-						<p class="project-desc">Bare-metal STM32 development without CubeIDE, using direct register access.</p>
+						<p class="project-desc">A bare-metal build environment and toolchain for STM32 without CubeIDE (CMake, Ninja, OpenOCD).</p>
+						<p class="project-credit" style="font-family: var(--mono); font-size: 0.72rem; color: var(--comment); margin: 0;">// based on <a href="https://github.com/kristianklein/stm32-without-cubeide" target="_blank" rel="noopener noreferrer" style="color: var(--comment);">kristianklein/stm32-without-cubeide</a></p>
 						<ul class="tags">
-							<li>STM32</li><li>C</li><li>Bare-Metal</li><li>Embedded</li>
+							<li>STM32</li><li>C</li><li>Bare-Metal</li><li>CMake</li><li>OpenOCD</li>
 						</ul>
-						<a class="project-link" href="https://github.com/KhaledMahfouz5/stm32-without-cubeide" target="_blank" rel="noopener noreferrer">github →</a>
+						<a class="project-link" href="https://github.com/KhaledMahfouz5/stm32-without-cubeide" target="_blank" rel="noopener noreferrer">github ↗</a>
 					</div>
 				</article>
 
 				<article class="project">
-					<div class="project-file">esp32-doom</div>
+					<div class="project-file">doom-esp-with-arduino</div>
 					<div class="project-body">
 						<h3>ESP32 DOOM</h3>
 						<p class="project-desc">Running DOOM on an ESP32 microcontroller.</p>
+						<p class="project-credit" style="font-family: var(--mono); font-size: 0.72rem; color: var(--comment); margin: 0;">// based on <a href="https://github.com/jkirsons/doom-espidf" target="_blank" rel="noopener noreferrer" style="color: var(--comment);">jkirsons/doom-espidf</a></p>
 						<ul class="tags">
-							<li>ESP32</li><li>C/C++</li><li>Graphics</li><li>Embedded</li>
+							<li>ESP32</li><li>C/C++</li><li>Arduino</li><li>ESP-IDF</li><li>Graphics</li>
 						</ul>
-						<a class="project-link" href="https://github.com/KhaledMahfouz5/esp32-doom" target="_blank" rel="noopener noreferrer">github →</a>
+						<a class="project-link" href="https://github.com/KhaledMahfouz5/doom-esp-with-arduino" target="_blank" rel="noopener noreferrer">github ↗</a>
 					</div>
 				</article>
 
@@ -200,11 +198,11 @@
 					<div class="project-file">tasks-org-json-reader</div>
 					<div class="project-body">
 						<h3>Tasks Org JSON Reader</h3>
-						<p class="project-desc">A JSON reader for org-mode tasks.</p>
+						<p class="project-desc">A small web viewer for the JSON data exported from the Tasks.org app.</p>
 						<ul class="tags">
-							<li>JavaScript</li><li>Svelte</li><li>CSS</li><li>HTML</li>
+							<li>JavaScript</li><li>Svelte</li><li>CSS</li><li>HTML</li><li>JSON</li>
 						</ul>
-						<a class="project-link" href="https://github.com/KhaledMahfouz5/tasks-org-json-reader" target="_blank" rel="noopener noreferrer">github →</a>
+						<a class="project-link" href="https://github.com/KhaledMahfouz5/tasks-org-json-reader" target="_blank" rel="noopener noreferrer">github ↗</a>
 					</div>
 				</article>
 
@@ -216,7 +214,7 @@
 						<ul class="tags">
 							<li>Flask</li><li>Python</li><li>Web App</li>
 						</ul>
-						<a class="project-link" href="https://github.com/KhaledMahfouz5/AL-Najeeb-System" target="_blank" rel="noopener noreferrer">github →</a>
+						<a class="project-link" href="https://github.com/KhaledMahfouz5/AL-Najeeb-System" target="_blank" rel="noopener noreferrer">github ↗</a>
 					</div>
 				</article>
 
@@ -226,9 +224,9 @@
 						<h3>Nmap Automation Script</h3>
 						<p class="project-desc">Automating network scans with Nmap.</p>
 						<ul class="tags">
-							<li>Python</li><li>Nmap</li><li>Network Scanning</li>
+							<li>Python</li><li>Nmap</li><li>Bash</li>
 						</ul>
-						<a class="project-link" href="https://github.com/KhaledMahfouz5/nmap-automation-script" target="_blank" rel="noopener noreferrer">github →</a>
+						<a class="project-link" href="https://github.com/KhaledMahfouz5/nmap-automation-script" target="_blank" rel="noopener noreferrer">github ↗</a>
 					</div>
 				</article>
 
@@ -240,20 +238,19 @@
 						<ul class="tags">
 							<li>Linux</li><li>Shell</li><li>Open Source</li>
 						</ul>
-						<a class="project-link" href="https://github.com/KhaledMahfouz5/linux-course" target="_blank" rel="noopener noreferrer">github →</a>
+						<a class="project-link" href="https://github.com/KhaledMahfouz5/linux-course" target="_blank" rel="noopener noreferrer">github ↗</a>
 					</div>
 				</article>
 			</div>
 		</section>
 
-		<!-- ===================== MILESTONES (register map) ===================== -->
 		<section id="milestones" class="section" aria-labelledby="milestones-title">
 			<h2 id="milestones-title" class="section-title">
-				<span class="section-prompt">// milestones</span>
+				<span class="section-prompt" aria-hidden="true">// milestones</span>
 				<span class="section-name">milestones</span>
 			</h2>
 
-			<div class="regmap-wrap">
+			<div class="regmap-wrap" tabindex="0" role="region" aria-label="Milestones table">
 				<table class="regmap">
 					<caption class="visually-hidden">Milestones at a glance</caption>
 					<colgroup>
@@ -270,27 +267,27 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td class="addr" aria-hidden="true">0x00</td>
+							<td class="addr">0x00</td>
 							<td class="name">frontend_exp</td>
 							<td class="value">
-								<span class="counter" data-count-to="1" data-suffix="">1</span> year of frontend development
+								<span class="counter" dir="ltr" data-count-to="1" data-suffix="">1</span> year of frontend development
 							</td>
 						</tr>
 						<tr>
-							<td class="addr" aria-hidden="true">0x04</td>
+							<td class="addr">0x04</td>
 							<td class="name">public_repos</td>
 							<td class="value">
-								<span class="counter" data-count-to="35" data-suffix="+">35+</span>
+								<span class="counter" dir="ltr" data-count-to="35" data-suffix="+">35+</span>
 								<a class="inline-link" href="https://github.com/KhaledMahfouz5" target="_blank" rel="noopener noreferrer">GitHub</a>
 							</td>
 						</tr>
 						<tr>
-							<td class="addr" aria-hidden="true">0x08</td>
+							<td class="addr">0x08</td>
 							<td class="name">linux_since</td>
 							<td class="value">2022 — daily Linux user</td>
 						</tr>
 						<tr>
-							<td class="addr" aria-hidden="true">0x0C</td>
+							<td class="addr">0x0C</td>
 							<td class="name">linkedin</td>
 							<td class="value">
 								<a class="inline-link" href="https://linkedin.com/in/khaled-mhfz-a82716331" target="_blank" rel="noopener noreferrer">/in/khaled-mhfz</a>
@@ -301,44 +298,43 @@
 			</div>
 		</section>
 
-		<!-- ===================== EXPERIENCE (git log) ===================== -->
 		<section id="experiences" class="section" aria-labelledby="exp-title">
 			<h2 id="exp-title" class="section-title">
-				<span class="section-prompt">/* experience */</span>
+				<span class="section-prompt" aria-hidden="true">/* experience */</span>
 				<span class="section-name">experience</span>
 			</h2>
 
 			<ol class="gitlog">
 				<li class="commit">
-					<span class="hash" aria-hidden="true">a1f3c02</span>
+					<span class="hash" dir="ltr">a1f3c02</span>
 					<div class="commit-body">
 						<h3>Computer and Automation Engineering — Damascus University</h3>
 						<p class="commit-meta">2023 – 2027 · ongoing · Computer Systems &amp; Computer Hardware</p>
 					</div>
 				</li>
 				<li class="commit">
-					<span class="hash" aria-hidden="true">7b2e9d1</span>
+					<span class="hash" dir="ltr">7b2e9d1</span>
 					<div class="commit-body">
 						<h3>Junior Frontend Developer — GammaTech</h3>
 						<p class="commit-meta">2023 – 2024</p>
 					</div>
 				</li>
 				<li class="commit">
-					<span class="hash" aria-hidden="true">c0d54aa</span>
+					<span class="hash" dir="ltr">c0d54aa</span>
 					<div class="commit-body">
 						<h3>TinyML Course — Hamak AI and Robotic Club</h3>
 						<p class="commit-meta">Dec 2025 – Jan 2026 · making AI usable on microcontrollers via Edge Impulse</p>
 					</div>
 				</li>
 				<li class="commit">
-					<span class="hash" aria-hidden="true">e8a11b6</span>
+					<span class="hash" dir="ltr">e8a11b6</span>
 					<div class="commit-body">
 						<h3>Fonte Aperta Program</h3>
 						<p class="commit-meta">2025 · advanced AI use-cases, pentesting techniques, open-source solutions</p>
 					</div>
 				</li>
 				<li class="commit">
-					<span class="hash" aria-hidden="true">3f9b0c7</span>
+					<span class="hash" dir="ltr">3f9b0c7</span>
 					<div class="commit-body">
 						<h3>Motion Graphics Course — Spacetoon Media Group</h3>
 						<p class="commit-meta">2022 · advanced motion graphics with After Effects</p>
@@ -347,10 +343,9 @@
 			</ol>
 		</section>
 
-		<!-- ===================== CONTACT ===================== -->
 		<section id="contact" class="section" aria-labelledby="contact-title">
 			<h2 id="contact-title" class="section-title">
-				<span class="section-prompt">$ contact --list</span>
+				<span class="section-prompt" aria-hidden="true">$ contact --list</span>
 				<span class="section-name">contact</span>
 			</h2>
 
@@ -369,7 +364,7 @@
 				</li>
 				<li>
 					<span class="contact-label">cv</span>
-					<a href="../assets/khaled_mhfz_cv_2026.pdf">Download CV (PDF)</a>
+					<a href="../assets/khaled_mhfz_cv_2026.pdf" type="application/pdf">Download CV (PDF)</a>
 				</li>
 				<li class="contact-email">
 					<span class="contact-label">email</span>
@@ -387,7 +382,6 @@
 
 	</main>
 
-	<!-- ===================== FOOTER ===================== -->
 	<footer class="site-footer">
 		<p class="privacy">
 			<strong>Privacy:</strong> no cookies, no trackers, no analytics, no third-party requests. This site is open source under the <span>MIT</span> license.
